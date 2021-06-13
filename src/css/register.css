@@ -1,0 +1,135 @@
+/* 主体样式 */
+
+main {
+    display: flex;
+    /* 主轴方向 */
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: url("../img/sign-bg.jpg") no-repeat;
+    background-size: cover;
+    color: #fff;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* 密码登录 */
+
+.load {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding-right: calc(8%);
+    padding-top: calc(5%);
+}
+
+/* 标题块 */
+
+.title {
+    line-height: 34px;
+    margin-top: 20px;
+    margin-left: 8%;
+    margin-bottom: 8%;
+}
+
+.title h1 {
+    font-size: 28px;
+}
+
+.title p {
+    font-size: 16px;
+    color: rgb(165, 162, 162);
+}
+
+/* 表单部分 */
+
+.formBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.formBox p {
+    display: flex;
+    width: 80%;
+    height: 38px;
+    margin: 2% 0;
+    border-radius: 20px;
+}
+
+.formBox input {
+    width: 100%;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    text-indent: 20px;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #E2DCDA;
+    font-size: 16px;
+}
+
+/* 验证码 */
+
+.user_code {
+    display: flex;
+    justify-content: center;
+}
+
+.user_code input {
+    width: 58%;
+}
+
+.user_code span {
+    display: inline-block;
+    width: 38%;
+    background: purple;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+    margin-left: 4%;
+}
+
+/* 注册按钮 */
+
+.user_register input {
+    text-indent: 0px;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(56, 130, 94, .7);
+}
+
+/* 微信登录 */
+
+.weChat {
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-right: 14%;
+    font-size: 14px;
+    margin-top: 4%;
+}
+
+.weChat i {
+    font-size: 16px !important;
+    margin-right: 5px;
+}
+
+/* hold */
+
+.hold {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hold span {
+    position: absolute;
+    bottom: 10%;
+    font-size: 16px;
+    font-weight: 600;
+}

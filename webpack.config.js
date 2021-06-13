@@ -20,14 +20,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     // 入口
     entry: {
-
+        // 引入公共css
+        commonCSS: './src/js/commonCSS.js',
         // 一个页面对应一个入口
         //首页
         home: './src/js/home.js',
-        //登录页
-        login: './src/js/login.js',
+        //注册页
+        register: './src/js/register.js',
         // 广告页
-        advertisement: './src/js/advertisement.js'
+        advertisement: './src/js/advertisement.js',
+        // 登录页
+        login: './src/js/login.js'
     },
 
     // 出口
@@ -100,19 +103,25 @@ module.exports = {
             template: "./src/page/home.html",//引用文件
             filename: 'home.html',//输出名字
             // 应用的模块home.js,和入口处的home.js绑定
-            chunks: ['home']
+            chunks: ['home', 'commonCSS']
         }),
-        // login页
+        // register注册页
         new HtmlWebpackPlugin({
-            template: "./src/page/login.html",
-            filename: 'login.html',
-            chunks: ['login']
+            template: "./src/page/register.html",
+            filename: 'register.html',
+            chunks: ['register', 'commonCSS']
         }),
         // 广告页
         new HtmlWebpackPlugin({
             template: "./src/page/advertisement.html",
             filename: 'advertisement.html',
-            chunks: ['advertisement']
+            chunks: ['advertisement', 'commonCSS']
+        }),
+        // login登录页
+        new HtmlWebpackPlugin({
+            template: "./src/page/login.html",
+            filename: 'login.html',
+            chunks: ['login', 'commonCSS']
         }),
 
 
@@ -136,7 +145,7 @@ module.exports = {
         port: 8081,  // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'index.html', // 打开的页面
+        openPage: 'advertisement.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 }

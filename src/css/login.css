@@ -1,0 +1,96 @@
+main {
+    width: 100%;
+    height: 100%;
+    background: url('../img/sign-bg.jpg') no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+/* 注册账号 */
+
+.register {
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 5% 5% 0 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* 标题 */
+
+.title {
+    font-size: 28px;
+    margin: 5% 0 0 10%;
+}
+
+/* 表单块 */
+
+.formBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.formBox p {
+    width: 80%;
+    height: 40px;
+    margin: 3% 0;
+    border-radius: 20px;
+}
+
+.formBox input {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .6);
+    color: #fff;
+    text-indent: 20px;
+}
+
+input::placeholder {
+    color: #E2DCDA;
+    font-size: 16px;
+}
+
+/* 登录按钮 */
+
+.user_load input {
+    background: rgba(56, 130, 94, .7);
+    color: #fff;
+    font-size: 18px;
+    text-indent: 0px;
+}
+
+/* 微信登录 */
+
+.weChat {
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-right: 14%;
+    font-size: 14px;
+    margin-top: 5%;
+}
+
+.weChat i {
+    font-size: 14px !important;
+    margin-left: 30px
+}
+
+/* hold */
+
+.hold {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hold span {
+    position: absolute;
+    bottom: 10%;
+    font-size: 16px;
+    font-weight: 600;
+}
