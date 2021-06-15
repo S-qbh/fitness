@@ -1,5 +1,7 @@
 // 导入home页的样式
-require('../css/home.css');
+require('../css/home.less');
 
 
-console.log('home');
+document.ready(function () {
+    console.log('home');
+})

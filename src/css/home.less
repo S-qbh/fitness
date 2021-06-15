@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+// 轮播图
+.banner {
+    height: 200px;
+    margin-bottom: 20px;
+
+    background: yellow;
+
+}
+// 主体
+main {
+    flex: 1;
+    overflow: scroll;
+    background: pink;
+
+}
+// 底部
+footer {
+    // 主轴对齐
+    justify-content: space-around;
+    // 侧轴对齐
+    align-items: center;
+    height: 77px;
+    background: chartreuse;
+}
+footer div {
+    text-align: center;
+    font-size:14px;
+}
+footer i {
+    font-size: 28px!important;
+}

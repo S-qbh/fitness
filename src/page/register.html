@@ -10,9 +10,9 @@
 
 <body>
     <!-- 主体 -->
-    <main>
+    <main class="dpflex">
         <!-- 密码登录 -->
-        <div class="load">
+        <div class="load dpflex">
             <span>密码登录</span>
         </div>
         <!-- 标题块 -->
@@ -21,33 +21,40 @@
             <p>快速找到好友，一站式记录你的运动</p>
         </div>
         <!-- 表单块 -->
-        <div class="formBox">
-            <p class="user_name">
-                <input type="text" placeholder="请输入电话号码">
-            </p>
-            <p class="user_code">
-                <input type="text" placeholder="请输入验证码">
-                <span>123456</span>
-            </p>
-            <p class="user_pwd">
-                <input type="text" placeholder="请输入密码">
-            </p>
-            <p class="user_Confirm">
-                <input type="text" placeholder="请确认密码">
-            </p>
-            <p class="user_register">
-                <input type="button" value="立即注册">
-            </p>
-        </div>
-        <!-- 微信注册 -->
-        <div class="weChat">
-            <i class="iconfont icon-wechat-fill"></i>
-            <span>微信注册</span>
+        <div class="formBox dpflex">
+            <!-- 用户名 -->
+            <div class="telBox dpflex">
+                <span class="fs16">+86</span><span><i class="iconfont icon-xiala"></i></span>
+                <input class="user_tel" type="text" placeholder="请输入电话号码">
+            </div>
+            <!-- 验证码 -->
+            <div class="codeBox">
+                <input class="user_code" type="text" placeholder="请输入验证码">
+                <canvas width="100" height="90" id="captcha" class="yzm"></canvas>
+            </div>
+            <!-- 密码 -->
+            <div class="pwdBox">
+                <input class="user_pwd" type="text" placeholder="请输入密码">
+            </div>
+            <!-- 确认密码 -->
+            <div class="confirm">
+                <input class="user_Confirm" type="text" placeholder="请确认密码">
+            </div>
+            <div class="regBtn"><span>立即注册</span></div>
+            <!-- 微信登录 -->
+            <div class="weChat dpflex">
+                <i class="iconfont icon-wechat-fill"></i><span>微信登录</span>
+            </div>
+            <!-- 注册提示 -->
+            <div class="infoMsg"></div>
         </div>
         <!-- hold -->
         <div class="hold">
             <span>-HOLD ON-</span>
         </div>
+
+
+
     </main>
 </body>
 

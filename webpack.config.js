@@ -22,6 +22,17 @@ module.exports = {
     entry: {
         // 引入公共css
         commonCSS: './src/js/commonCSS.js',
+        // 引入公共js文件
+        // 预加载
+        dom: './src/js/common/dom.js',
+        // ajax请求
+        http: './src/js/common/http.js',
+        // 公共js
+        utils: './src/js/common/utils.js',
+        // 验证码(注册)
+        captcha: './src/lib/captcha/captcha-mini.js',
+
+
         // 一个页面对应一个入口
         //首页
         home: './src/js/home.js',
@@ -103,25 +114,25 @@ module.exports = {
             template: "./src/page/home.html",//引用文件
             filename: 'home.html',//输出名字
             // 应用的模块home.js,和入口处的home.js绑定
-            chunks: ['home', 'commonCSS']
+            chunks: ['home', 'commonCSS', 'dom']
         }),
         // register注册页
         new HtmlWebpackPlugin({
             template: "./src/page/register.html",
             filename: 'register.html',
-            chunks: ['register', 'commonCSS']
+            chunks: ['register', 'commonCSS', 'dom', 'http', 'captcha', 'utils']
         }),
         // 广告页
         new HtmlWebpackPlugin({
             template: "./src/page/advertisement.html",
             filename: 'advertisement.html',
-            chunks: ['advertisement', 'commonCSS']
+            chunks: ['advertisement', 'commonCSS', 'dom']
         }),
         // login登录页
         new HtmlWebpackPlugin({
             template: "./src/page/login.html",
             filename: 'login.html',
-            chunks: ['login', 'commonCSS']
+            chunks: ['login', 'commonCSS', 'dom', 'http', 'utils']
         }),
 
 
