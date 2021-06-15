@@ -35,3 +35,25 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+
+/* 首页底部导航栏 */
+
+/*  底部 */
+
+footer {
+    /* 主轴对齐 */
+    justify-content: space-around;
+    /* 侧轴对齐 */
+    align-items: center;
+    height: 77px;
+    background: #fff;
+}
+
+footer div {
+    text-align: center;
+    font-size: 14px;
+}
+
+footer i {
+    font-size: 28px!important;
+}
