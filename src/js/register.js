@@ -49,7 +49,7 @@ document.ready(function () {
         let telReg = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
         // 判断是否符合规则
         if (!telReg.test(telInp.value)) {
-            utils.tatol(1, '用户名错误');
+            utils.tatol(1, '用户名错误', 2);
         }
     })
 
@@ -60,7 +60,7 @@ document.ready(function () {
     // 验证码输入框失焦事件验证
     yzmInp.addEventListener('blur', function (e) {
         if (yzmInp.value.toLowerCase() != yzmVal.toLowerCase()) {
-            utils.tatol(1, '验证码错误');
+            utils.tatol(1, '验证码错误', 2);
 
         }
     })
@@ -72,7 +72,7 @@ document.ready(function () {
         // 正则 字母开头，长度在6~18之间，只能包含字母、数字和下划线
         let pwdReg = /^[a-zA-Z]\w{5,17}$/
         if (!pwdReg.test(pwdInp.value)) {
-            utils.tatol(1, '字母开头，长度在6~18之间，只能包含字母、数字和下划线');
+            utils.tatol(1, '字母开头，长度在6~18之间，只能包含字母、数字和下划线', 2);
         }
     })
 
@@ -82,7 +82,7 @@ document.ready(function () {
     confirmInp.addEventListener('blur', function (e) {
         // 判断两次密码是否一致
         if (pwdInp.value != confirmInp.value) {
-            utils.tatol(1, '两次输入的密码不一致');
+            utils.tatol(1, '两次输入的密码不一致', 2);
         }
     })
 
@@ -93,7 +93,7 @@ document.ready(function () {
     regBtn.addEventListener('click', function (e) {
         // 非空验证
         if (telInp.value == '' && yzmInp.value == '' && pwdInp.value == '' && confirmInp.value == '') {
-            utils.tatol(1, '输入的内容不能为空');
+            utils.tatol(1, '输入的内容不能为空', 2);
 
         } else {
             // 数据请求
@@ -106,7 +106,7 @@ document.ready(function () {
                 // console.log(result.status);
                 // 判断状态 1已存在 0注册成功
                 if (result.status == 1) {
-                    utils.tatol(0, "用户已存在，即将跳转登录页");
+                    utils.tatol(0, "用户已存在，即将跳转登录页", 2);
                     setTimeout(function () {
                         location.href = './login.html';
                     }, 2000)
@@ -120,11 +120,11 @@ document.ready(function () {
 
                 }
                 if (result.status == 0) {
-                    utils.tatol(0, '注册成功，即将跳转登录页');
-                    setTimeout(function () {
-                        location.href = './login.html';
-                    }, 2000)
-
+                    // utils.tatol(0, '操作成功，即将跳转首页');
+                    // setTimeout(function () {
+                    //     location.href = './login.html';
+                    // }, 2000)
+                    autoLogin(data);
                     // 清空输入框
                     telInp.value = '';
                     yzmInp.value = '';
@@ -136,7 +136,40 @@ document.ready(function () {
 
 
     })
+    // 注册成功自动登录
+    function autoLogin(data) {
+        // 数据请求
+        // let data = {
+        //     account: telInp.value,
+        //     password: pwdInp.value
+        // }
+        // post请求
+        $http.post("http://139.9.177.51:8099/users/login", data, function (result) {
+            console.log(result);
+            console.log(result.status);
+            // 判断状态
+            if (result.status == 0) {
+                // 登录成功
+                utils.tatol(0, "注册成功，即将跳转首页!", 2)
+                localStorage.setItem('user', JSON.stringify(result.data.user));
 
+                // 定时器跳转页面
+                setTimeout(function () {
+                    location.href = './home.html';
+                }, 2000)
+                // 输入框数据清空
+                telInp.value = '';
+                pwdInp.value = '';
+            }
+            if (result.status == 555) {
+                // 用户名或账号错误
+                utils.tatol(0, "用户名或密码错误，请重新输入!", 2)
+                // 输入框数据清空
+                telInp.value = '';
+                pwdInp.value = '';
+            }
+        })
+    }
 
 
 

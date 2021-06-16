@@ -12,6 +12,10 @@
     display: none;
 }
 
+.fdcolumn {
+    flex-direction: column;
+}
+
 .flex1 {
     flex: 1
 }

@@ -7,7 +7,7 @@ body {
     height: 200px;
     margin-bottom: 20px;
 
-    background: yellow;
+    background: chartreuse;
 
 }
 // 主体
@@ -20,10 +20,16 @@ main {
     flex: 1;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     // background: pink;
 
 }
+// 轮播图插件样式
+.swiper-container {
+    width: 100%;
+    height: 200px;
+}  
+
 // 排名+打卡
 .rankBox {
     display: flex;
@@ -36,15 +42,61 @@ main {
 }
 // 排名
 .rank {
-    width: calc(45% - 10px);
-    background: #1592CC;
+    position: relative;
+    // width: calc(40% - 10px);
+    flex: 2;
+    background: #54AFDA url("../img/index-card-rank.png") no-repeat;
+    background-size:80%;
+    background-position: -30% 65%;
     border-radius: 15px;
+
+    box-sizing: border-box;
+    padding: 15px;
+}
+// 排名标题
+.rank-title {
+    font-size: 16px;
+    font-weight: 550;
+}
+// 排名数字
+.rank-num {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-size: 60px;
+    color: #005177;
 }
 // 打卡
 .card {
-    width: calc(55% -10px);
-    background: #1592CC;
+    position: relative;
+    // width: calc(60% -10px);
+    flex: 3;
+    background: #9FD9F8 url("../img/index-card-sum.png") no-repeat;
+    background-size: 50%;
+    background-position: 10% 65%;
     border-radius: 15px;
+    margin-left: 20px;
+
+    box-sizing: border-box;
+    padding: 15px;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: 550;
+}
+.card-btn {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+    width: 80px;
+    height: 30px;
+    line-height: 26px;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 16px;
+    border-radius: 15px;
+
+    display: block;
 }
 // 运动数据+运动徽章
 .motion {
@@ -63,14 +115,46 @@ main {
     background: url("../img/index-card-data.png");
     background-size: cover;
     border-radius: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+// 运动数据标题
+.data-title {
+    color: #fff;
+    font-size: 16px;
 }
 // 运动徽章
 .badge {
+    position: relative;
     height: 110px;
     width: calc(50% - 10px);
-    background: #9DBDE3;
+    background: #9DBDE3 url("../img/index-card-badge.png") no-repeat;
+    background-size: 55%;
+    background-position: 10% 120%;
     border-radius: 15px;
+
+    box-sizing: border-box;
+    padding: 10px;
 }
+// 标题
+.badge-title {
+    font-size: 16px;
+    font-weight: 550;
+}
+// 数字
+.badge-num {
+    position: absolute;
+    right: 5%;
+    bottom:2%;
+    font-size: 18px;
+    color:#005177;
+    font-weight: 800;
+}
+.badge-num span {
+    font-weight: 550;
+    font-size: 70px;
+}
+
 // 课程训练
 .course {
     display: flex;
@@ -81,17 +165,29 @@ main {
     background-size: cover;
     // background-position: 0px 10px;
     background-position-y: 10%;
-
     margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 15px;
 }
-
+// 课程训练标题
+.course-title {
+    color: #fff;
+    font-size: 16px;
+}
 // 户外跑步
 .running {
     width: 95%;
     height: 110px;
-    background: url("../img/course-img02.png");
+    background: url("../img/course-img02.png") no-repeat;
     background-size: cover;
-    background-position-y: 10%;
+    background-position-y: 90%;
     border-radius: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+// 户外跑步标题
+.running-title {
+    color: #fff;
+    font-size: 16px;
 }

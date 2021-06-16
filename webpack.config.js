@@ -29,8 +29,11 @@ module.exports = {
         http: './src/js/common/http.js',
         // 公共js
         utils: './src/js/common/utils.js',
+        // 三方插件
         // 验证码(注册)
         captcha: './src/lib/captcha/captcha-mini.js',
+        swiper: './src/lib/swiper/swiper-bundle.js',
+
 
 
         // 一个页面对应一个入口
@@ -41,7 +44,11 @@ module.exports = {
         // 广告页
         advertisement: './src/js/advertisement.js',
         // 登录页
-        login: './src/js/login.js'
+        login: './src/js/login.js',
+        // 个人中心
+        personal: './src/js/personal.js',
+        // 运动页
+        sports: './src/js/sports.js'
     },
 
     // 出口
@@ -114,7 +121,7 @@ module.exports = {
             template: "./src/page/home.html",//引用文件
             filename: 'home.html',//输出名字
             // 应用的模块home.js,和入口处的home.js绑定
-            chunks: ['home', 'commonCSS', 'dom']
+            chunks: ['home', 'commonCSS', 'dom', 'http', 'utils', 'swiper']
         }),
         // register注册页
         new HtmlWebpackPlugin({
@@ -134,7 +141,19 @@ module.exports = {
             filename: 'login.html',
             chunks: ['login', 'commonCSS', 'dom', 'http', 'utils']
         }),
-
+        // 个人中心
+        new HtmlWebpackPlugin({
+            template: './src/page/personal.html',
+            filename: 'personal.html',
+            chunks: ['personal', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        // 运动
+        // 个人中心
+        new HtmlWebpackPlugin({
+            template: './src/page/sports.html',
+            filename: 'sports.html',
+            chunks: ['sports', 'commonCSS', 'dom', 'http', 'utils']
+        }),
 
         new MiniCssExtractPlugin({
             // 设置文件名及路径[name]跟随主模块的名字

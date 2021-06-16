@@ -10,45 +10,73 @@
 
 <body>
     <!-- 轮播图 -->
-    <header>
-        <div class="banner"></div>
-    </header>
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <img src="../img/index-swiper-bg1.jpg" alt="" class="swiper-slide">
+                <img src="../img/index-swiper-bg2.jpg" alt="" class="swiper-slide">
+                <img src="../img/index-swiper-bg3.jpg" alt="" class="swiper-slide">
+                <!-- <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div> -->
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <!-- <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-button-next"></div> -->
+
+            <!-- 如果需要滚动条 -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+    </div>
+
     <!-- 主体 -->
     <main>
         <!-- 排名+打卡 -->
         <div class="rankBox">
             <!-- 排名 -->
-            <div class="rank"></div>
+            <div class="rank">
+                <!-- 排名标题 -->
+                <p class="rank-title">今日排名</p>
+                <!-- 排名数字 -->
+                <div class="rank-num"></div>
+            </div>
             <!-- 打卡 -->
-            <div class="card"></div>
+            <div class="card">
+                <!-- 标题 -->
+                <p class="card-title">累计打卡<span id="cardDays"></span>天</p>
+                <!-- 打卡按钮 -->
+                <div class="card-btn">今日打卡</div>
+            </div>
         </div>
         <!-- 运动数据+运动徽章 -->
         <div class="motion">
             <!-- 运动数据 -->
-            <div class="sport-data"></div>
+            <div class="sport-data">
+                <div class="data-title">运动数据</div>
+            </div>
             <!-- 徽章 -->
-            <div class="badge"></div>
+            <div class="badge">
+                <!-- 标题 -->
+                <div class="badge-title">累积运动徽章</div>
+                <!-- 数字 -->
+                <div class="badge-num"><span id="badgeNum"></span>枚</div>
+            </div>
         </div>
         <!-- 课程训练 -->
-        <div class="course"></div>
+        <div class="course">
+            <!-- 课程训练标题 -->
+            <div class="course-title">课程训练</div>
+        </div>
         <!-- 户外跑步 -->
-        <div class="running"></div>
+        <div class="running">
+            <!-- 户外跑步标题 -->
+            <div class="running-title">户外跑步</div>
+        </div>
     </main>
-    <!-- 底部导航 -->
-    <footer class="dpflex">
-        <div>
-            <i class="iconfont iconhome"></i><br>
-            首页
-        </div>
-        <div>
-            <i class="iconfont iconsports"></i><br>
-            运动
-        </div>
-        <div>
-            <i class="iconfont iconmine"></i><br>
-            我的
-        </div>
-    </footer>
+
 </body>
 
 </html>
