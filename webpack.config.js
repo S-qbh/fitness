@@ -48,7 +48,14 @@ module.exports = {
         // 个人中心
         personal: './src/js/personal.js',
         // 运动页
-        sports: './src/js/sports.js'
+        sports: './src/js/sports.js',
+        // 用户信息页
+        userInfo: './src/js/userInfo.js',
+        // 运动数据页
+        sportsData: './src/js/sportsData.js',
+        // 课程介绍页
+        course: './src/js/course.js'
+
     },
 
     // 出口
@@ -153,6 +160,24 @@ module.exports = {
             template: './src/page/sports.html',
             filename: 'sports.html',
             chunks: ['sports', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        // 用户详细信息
+        new HtmlWebpackPlugin({
+            template: './src/page/userInfo.html',
+            filename: 'userInfo.html',
+            chunks: ['userInfo', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        // 运动数据页
+        new HtmlWebpackPlugin({
+            template: './src/page/sportsData.html',
+            filename: 'sportsData.html',
+            chunks: ['sportsData', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/page/course.html',
+            filename: 'course.html',
+            chunks: ['course', 'commonCSS', 'dom', 'http', 'utils']
+
         }),
 
         new MiniCssExtractPlugin({

@@ -29,12 +29,20 @@ main {
 }
 // 用户头像
 .user-header {
+    position: relative;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     background: url("../img/headerPic.jpg") no-repeat;
     background-size: cover;
     border: 2px solid #4294FF;
+    i{
+        position: absolute;
+        bottom: 0;
+        right: -50px;
+        font-size: 26px;
+        color: #fcc12d;
+    }
 }
 // 用户名
 .user-name {
@@ -71,42 +79,7 @@ main {
     box-sizing: border-box;
     padding: 15px;
 }
-// 总运动+本周消耗
-.weeks-box {
-    width: 100%;
-    height: 80px;
-    // background: yellowgreen;
-}
-// 公共设置
-.common-week {
-    flex: 11;
-    height: 80px;
-    box-sizing: border-box;
-    padding-left: 10px;
-}
-// 运动标题-公共
-.run-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 8px;
-    color: #8a8a8a;
-    margin-bottom: 12px;
-}
-// 运动分钟数-公共
-.run-text {
-    font-size: 16px;
-    color: #333;
-}
-// 数字样式
-.num {
-    font-size: 40px;
-    color:#4294FF;
-}
-// // 本周运动
-.weeks-sports {
-    // background: pink;
-    border-right: 1px dashed #bbb;
-}
+
 
 // 运动徽章
 .user-badge {

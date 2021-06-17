@@ -1,0 +1,167 @@
+i{
+    font-style: normal;
+}
+body {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+// 视频播放块
+.audio-box {
+    width: 100%;
+    height: 371px;
+    background: #000;
+}
+// 主体
+main {
+    flex-direction: column;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding-left: 25px;
+    padding-right: 15px;
+    // background: chartreuse;
+}
+// 标题
+.course-title {
+    width: 100%;
+    height: 60px;
+    // background: crimson;
+    border-bottom: 1px solid #bbb;
+
+    box-sizing: border-box;
+    padding-top: 5px; 
+    div {
+        justify-content: space-between;
+        margin-top: 4px;
+        span {
+            font-size:14px;
+            color:#8a8a8a;
+        }
+    }
+}
+.data-ka {
+    font-size: 16px;
+    color: #333;
+    font-weight: 800;
+}
+.data-minute {
+    font-size: 16px;
+    color: #333;
+    font-weight: 800;
+}
+// 课程简介
+.course-introduction {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    // background: yellow;
+    .left-user-info {
+        justify-content: flex-start;
+        align-items: center;
+        width: 200px;
+        height: 90px;
+        // background: green;
+    }
+    .right-follow {
+        width: 80px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        background: #4294ff;
+        border-radius: 20px;
+        color: #fff;
+    }
+}
+// 课程简介-左侧用户信息-头像
+.user-headerPic {
+    width: 60px;
+    height: 60px;
+    background: url("../img/headerPic.jpg") no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+// 课程简介-左侧用户信息-用户名
+.user-textMsg {
+    margin-left: 10px;
+    h6 {
+        font-size: 18px;
+    }
+    p{
+        font-size: 14px;
+        margin-top: 10px;
+        color: #8a8a8a;
+    }
+}
+// 课程文字
+.course-text {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    color: #8a8a8a;
+    margin-top: 5px;
+    // background: yellow;
+}
+.more {
+    font-size: 14px;
+    color: #333;
+    font-weight: 800;
+}
+// 课程练习
+.course-practice {
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    // background: green;
+}
+// 左侧练习频次
+.left-frequency {
+    flex: 1;
+    // background: yellow;
+    box-sizing: border-box;
+    padding-top: 2px;
+    padding-left: 15px;
+    font-size: 14px;
+    border-right: 1px dashed #bbb;    
+    div {
+        margin-bottom: 5px;
+    }
+    p{
+        margin-left: 20px;
+        font-size: 14px;
+        color: #8a8a8a;
+    }
+}
+// 右侧练习器械
+.right-tools{
+    flex: 1;
+    box-sizing: border-box;
+    padding-top: 2px;
+    padding-left: 15px;
+    font-size: 14px;
+    // background: pink;
+        div {
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 14px;
+            color: #8a8a8a;
+        }
+}
+.icon-title {
+    font-size: 18px;
+    margin-right: 5px;
+    color: #4294ff;
+}
+// 按钮
+.start-btn {
+    width: 90%;
+    height: 45px;
+    margin-top: 10px;
+    background: #4294ff;
+    border-radius: 27px;
+    text-align:center;
+    line-height: 45px;
+    font-size: 18px;
+    color: #fff;
+}

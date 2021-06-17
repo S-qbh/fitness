@@ -16,6 +16,10 @@ document.ready(function () {
     // 获取运动分钟 获取本周消耗
     let minutesDom = document.querySelector(".week-minutes");
     let weekKaDom = document.querySelector(".week-ka");
+    // 获取用户信息节点
+    let userInfoBoxDom = document.querySelector(".user-info-box");
+    // 获取跳转数据页按钮
+    let goDataBtn = document.querySelector("#go-data");
 
 
     // 引入公共组件底部导航，utils.js
@@ -38,7 +42,7 @@ document.ready(function () {
     function getSports() {
         // 通过userId进行数据请求
         $http.get("http://139.9.177.51:8099/users/mysportsBadge", { userId: userId }, function (result) {
-            console.log(result);
+            // console.log(result);
             // 渲染数据
             minutesDom.textContent = result.data.sports.times;
             weekKaDom.textContent = result.data.sports.calorie;
@@ -69,6 +73,16 @@ document.ready(function () {
     // 取消按钮
     noBtn.addEventListener('click', function (e) {
         mantleDom.style.display = "none";
+    })
+
+    // 用户信息点击事件监听
+    userInfoBoxDom.addEventListener('click', function (e) {
+        // 点击跳转详细信息页
+        location.href = './userInfo.html';
+    })
+    // 跳转运动数据页监听
+    goDataBtn.addEventListener('click', function (e) {
+        location.href = './sportsData.html';
     })
 
 
