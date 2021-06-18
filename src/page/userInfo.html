@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="dpflex">
     <!-- 头部 -->
     <header class="dpflex">
         <!-- 返回按钮 -->
@@ -18,78 +18,60 @@
         <!-- 文字 -->
         <div class="header-text flex1">个人资料</div>
     </header>
-    <!-- 主体 -->
-    <main class="flex1">
-        <!-- 详细信息-更换头像 -->
-        <div class="msg-box user-header dpflex">
-            <!-- 左侧标题 -->
-            <div class="left-title">更换头像</div>
-            <!-- 右侧信息 -->
-            <div class="right-msg dpflex">
-                <div class="header-pic"></div>
-                <i class="iconfont iconarrow-right"></i>
+    <!-- 主体表单 -->
+    <main>
+        <!-- 昵称 -->
+        <div class="weui-cell weui-cell_active">
+            <div class="weui-cell__hd"><label class="weui-label">昵称</label></div>
+            <div class="weui-cell__bd">
+                <input id="js_input" class="weui-input user-name-text" placeholder="请输入" />
             </div>
         </div>
-        <!-- 详细信息-昵称 -->
-        <div class="msg-box user-name dpflex">
-            <!-- 左侧标题 -->
-            <div class="left-title">昵称</div>
-            <!-- 右侧信息 -->
-            <div class="right-msg dpflex">
-                <!-- 文字信息 -->
-                <span id="user-info-name">用户名</span>
-                <b></b>
-                <!-- <i class="iconfont iconarrow-right"></i> -->
+        <!-- 性别 -->
+        <div class="weui-cell weui-cell_active weui-cell_access" id="gender-box">
+            <div class="weui-cell__bd">
+                <span class="demo_badge_title">性别</span>
             </div>
+            <div class="weui-cell__ft" id="gender-text">请选择</div>
         </div>
-        <!-- 详细信息-性别 -->
-        <div class="msg-box user-sex dpflex">
-            <!-- 左侧标题 -->
-            <div class="left-title">性别</div>
-            <!-- 右侧信息 -->
-            <div class="right-msg dpflex">
-                <!-- 文字信息 -->
-                <span id="user-info-sex">男</span>
-                <!-- <b></b> -->
-                <i class="iconfont iconarrow-right"></i>
+        <!-- 生日 -->
+        <div class="weui-cell weui-cell_active weui-cell_access" id="birthday-box">
+            <div class="weui-cell__bd">
+                <span class="demo_badge_title">生日</span>
             </div>
+            <div class="weui-cell__ft" id="birthday-text">请选择</div>
         </div>
-        <!-- 详细信息-生日 -->
-        <div class="msg-box user-birthday dpflex">
-            <!-- 左侧标题 -->
-            <div class="left-title">生日</div>
-            <!-- 右侧信息 -->
-            <div class="right-msg dpflex">
-                <!-- 文字信息 -->
-                <span id="user-info-birthday">2021-06-17</span>
-                <!-- <b></b> -->
-                <i class="iconfont iconarrow-right"></i>
+        <!-- 省 -->
+        <div class="weui-cell weui-cell_active weui-cell_access" id="province-box">
+            <div class="weui-cell__bd">
+                <span class="demo_badge_title">省份</span>
             </div>
+            <div class="weui-cell__ft" id="province-text">请选择</div>
         </div>
-        <!-- 详细信息-城市 -->
-        <div class="msg-box user-birthday dpflex">
-            <!-- 左侧标题 -->
-            <div class="left-title">所在城市</div>
-            <!-- 右侧信息 -->
-            <div class="right-msg dpflex">
-                <!-- 文字信息 -->
-                <span id="user-info-birthday">四川省 成都市</span>
-                <!-- <b></b> -->
-                <i class="iconfont iconarrow-right"></i>
+        <!-- 市 -->
+        <div class="weui-cell weui-cell_active weui-cell_access" id="city-box">
+            <div class="weui-cell__bd">
+                <span class="demo_badge_title">城市</span>
             </div>
+            <div class="weui-cell__ft" id="city-text">请选择</div>
         </div>
-        <!-- 用户简介 -->
-        <div class="introduce-box">
-            <!-- 标题 -->
-            <div class="introduce-title">用户简介</div>
-            <!-- 内容 -->
-            <div class="introduce-text" contenteditable></div>
-        </div>
-        <!-- 保存按钮 -->
-        <div class="save-btn dpflex">
-            <span>保存信息</span>
+        <!-- 个人简介 -->
+        <div class="weui-cells__group weui-cells__group_form info-msg-edit">
+            <div class="weui-cells__title" id="personText-box">个人简介</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell ">
+                    <div class="weui-cell__bd" id="bg-person">
+                        <textarea class="weui-textarea" placeholder="多行描述" rows="3" id="personText"></textarea>
+                        <div class="weui-textarea-counter"><span>0</span>/200</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+    <!-- 保存按钮 -->
+    <div class="save-btn dpflex">
+        <span>保存信息</span>
+    </div>
 </body>
 
 </html>

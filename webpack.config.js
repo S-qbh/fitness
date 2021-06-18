@@ -33,6 +33,7 @@ module.exports = {
         // 验证码(注册)
         captcha: './src/lib/captcha/captcha-mini.js',
         swiper: './src/lib/swiper/swiper-bundle.js',
+        weui: './src/lib/weui/weui.js',
 
 
 
@@ -165,7 +166,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/page/userInfo.html',
             filename: 'userInfo.html',
-            chunks: ['userInfo', 'commonCSS', 'dom', 'http', 'utils']
+            chunks: ['userInfo', 'commonCSS', 'dom', 'http', 'utils', 'weui']
         }),
         // 运动数据页
         new HtmlWebpackPlugin({

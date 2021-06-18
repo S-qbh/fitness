@@ -130,4 +130,4 @@ function $updateFile(url, fdKey, fdValue, success) {
 
 // 挂载
 window.$http = http;
-window.$updateFile = $updateFile
+window.$updateFile = $updateFile;

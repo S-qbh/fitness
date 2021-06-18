@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
@@ -25,71 +26,24 @@ header {
         text-align: center;
     }
 }
-// 主体
-main {
-    // background: chartreuse;
-    box-sizing: border-box;
-    padding: 0 25px;
-}
-// 详细信息
-.msg-box {
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    // background: yellow;
-    border-bottom: 1px solid #e8e8e8;
-    .left-title {
-        font-size: 16px;
-        // font-weight: 800;
-    }
-    .header-pic {
-        width: 100px;
-        height: 100px;
-        background: url("../img/headerPic.jpg") no-repeat;
-        background-size: cover;
-        border-radius: 50%;
-    }
-    .right-msg{
-        display: flex;
-        align-items: center;
-        color:#8a8a8a;
-        i{
-            font-size: 28px;
-        }
-        b {
-            display: inline-block;
-            width: 30px;
-        }
-    }
-}
-// 用户头像设置
-.user-header {
-    height: 120px;
-}
 
-// 用户简介
-.introduce-title {
-    margin: 10px 0;
-}
-.introduce-text {
-    width: 100%;
-    height: 160px;
-    background: #e8e8e8;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 10px;
-    outline: none;
-}
 // 保存按钮
 .save-btn {
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 55px;
-    margin-top: 10px;
-    background: #4294ff;
+
+    width: 80%;
+    height: 40px;
+
     font-size: 18px;
     color: #fff;
-    border-radius: 27px;
+    margin-top: 20px;
+    background: #4294ff;
+    border-radius: 20px;
+}
+// 多行描述取消样式
+#personText-box {
+    padding-left: 15px;
+    font-size: 16px;
+    color: #333;
 }

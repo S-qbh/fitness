@@ -12,6 +12,13 @@ document.ready(function () {
     // 登录节点获取
     let loadBtn = document.querySelector(".user_load input");
 
+    // 判断如果本地存储有值则直接跳转
+    let user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        location.href = './home.html';
+    }
+
+
     // 注册事件监听
     regDom.addEventListener('click', function (e) {
         location.href = "./register.html";

@@ -33,9 +33,14 @@ main {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: url("../img/headerPic.jpg") no-repeat;
+    background: chartreuse;
     background-size: cover;
-    border: 2px solid #4294FF;
+    // border: 2px solid #4294FF;
+    img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
     i{
         position: absolute;
         bottom: 0;
@@ -67,9 +72,7 @@ main {
     margin: 5px 0 0 25px;
     // background: crimson;
 }
-.user-text {
-    background: yellow;
-}
+
 // 运动数据
 .sport-data {
     width: 100%;
@@ -210,4 +213,9 @@ main {
 .right-btn i {
     font-size: 20px!important;
     font-weight: 800;
+}
+
+// 隐藏文件上传
+.file-send-btn {
+    display: none;
 }

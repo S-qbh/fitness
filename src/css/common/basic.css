@@ -40,11 +40,10 @@
 
 /*  底部 */
 
-/* body {
+body {
     width: 100%;
     height: 100%;
-    position: relative;
-} */
+}
 
 .footer {
     /* 主轴对齐 */
@@ -55,7 +54,7 @@
     background: #fff;
     left: 0px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-    /* position: absolute;
+    /* position: fixed;
     bottom: 0;
     right: 0; */
 }
