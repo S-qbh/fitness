@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 课程展示 -->
+    <div class="course-box">
+        <!-- 视频 -->
+        <video src="http://139.9.177.51:8099/f/course/part1.mp4" muted autoplay></video>
+        <!-- 节数 -->
+        <div class="msg">
+            <!-- 进度 -->
+            <div class="progress">
+                <span class="start-num"></span>/<span class="all-num"></span>
+            </div>
+            <!-- 标题 -->
+            <div class="msg-title"></div>
+        </div>
+    </div>
+    <!-- 按钮+进度条 -->
+    <div class="progress-box">
+        <!-- 进度条 -->
+        <div class="progress-bottom"></div>
+        <i class="iconfont iconxueyuan-shangyijie previous-btn"></i>
+        <i class="iconfont iconzanting start-btn"></i>
+        <i class="iconfont iconxueyuan-xiayijie last-btn"></i>
+    </div>
+
+    <!-- 蒙层 -->
+    <div class="stop-mantle">
+        <!-- 标题 -->
+        <div class="mantle-title">放弃可以找到一万个理由，坚持只需一个信念!</div>
+        <!-- 按钮 -->
+        <div class="mantle-btn">
+            <!-- 继续按钮 -->
+            <div class="continue-btn">
+                <p><i class="iconfont iconicon_play"></i></p>
+                继续
+            </div>
+            <!-- 结束按钮 -->
+            <div class="end-btn">
+                <p><i class="iconfont iconjieshu"></i></p>
+                结束
+            </div>
+        </div>
+        <!-- 图片+当前 -->
+        <div class="picBox dpflex">
+            <img src="../img/part1.png" alt="">
+            <div class="pic-title">
+                <p>当前:</p>
+                <h3 class="nowpic-title"></h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

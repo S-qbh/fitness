@@ -55,7 +55,9 @@ module.exports = {
         // 运动数据页
         sportsData: './src/js/sportsData.js',
         // 课程介绍页
-        course: './src/js/course.js'
+        course: './src/js/course.js',
+        // 课程详情页
+        details: './src/js/details.js'
 
     },
 
@@ -174,11 +176,17 @@ module.exports = {
             filename: 'sportsData.html',
             chunks: ['sportsData', 'commonCSS', 'dom', 'http', 'utils']
         }),
+        // 课程展示页
         new HtmlWebpackPlugin({
             template: './src/page/course.html',
             filename: 'course.html',
             chunks: ['course', 'commonCSS', 'dom', 'http', 'utils']
-
+        }),
+        // 课程详情页
+        new HtmlWebpackPlugin({
+            template: './src/page/details.html',
+            filename: 'details.html',
+            chunks: ['details', 'commonCSS', 'dom', 'http', 'utils']
         }),
 
         new MiniCssExtractPlugin({

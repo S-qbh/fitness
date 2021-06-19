@@ -33,7 +33,7 @@ document.ready(function () {
     // 通过userId获取用户信息进行渲染
     function getUserInfo() {
         $http.get('http://139.9.177.51:8099/users/accountinfo', { userId: userId }, function (result) {
-            // console.log(result);
+            console.log(result);
             let arr = result.data.address.split(',');
 
             // 格林威治时间转常用事件
@@ -55,14 +55,37 @@ document.ready(function () {
             let nowTime = getTime(result.data.birthday);
 
 
-
             // 页面渲染
+
+            // 昵称
             userNameTextDom.value = result.data.nickname;
-            genderTextDom.textContent = result.data.gender;
-            birthdayTextDom.textContent = nowTime;
-            provinceTextDom.textContent = arr[0];
-            cityTextDom.textContent = arr[1];
-            personTextDom.value = result.data.sign;
+            data.nicName = result.data.nickname;//修改用户的默认值
+            // 性别
+            if (result.data.gender) {
+                genderTextDom.textContent = result.data.gender;
+                data.gender = result.data.gender;
+            }
+            // 生日
+            if (result.data.birthday) {
+                birthdayTextDom.textContent = nowTime;
+                data.birthday = nowTime;
+            }
+            // 省份
+            if (arr[0]) {
+                provinceTextDom.textContent = arr[0];
+                data.pro = arr[0];
+            }
+            // 城市
+            if (arr[1]) {
+                cityTextDom.textContent = arr[1];
+                data.city = arr[1];
+            }
+            // 描述-个性签名
+            if (result.data.sign) {
+                personTextDom.value = result.data.sign;
+                data.sign = result.data.sign;
+            }
+
 
         })
     }
@@ -143,10 +166,7 @@ document.ready(function () {
                     provinceTextDom.textContent = result[0].label;
                     // 将性别存入全局对象data中
                     data.pro = result[0];
-                    // 下一句获取省+id
-                    // console.log(data.pro);
-                    // 下一句获取id
-                    // console.log(data.pro.value);
+
 
 
                     // 如果选择省份，市级清空
@@ -166,7 +186,7 @@ document.ready(function () {
         // 判断全局对象data中pro的值是否为空，未选择省份则提示并终止操作
         if (data.pro == '') {
             // 提示
-            utils.tatol(0, '请先选择省份');
+            utils.tatol(1, '请先选择省份');
             return;//终止
         }
         // 通过全局对象data中的pro下的value值进行城市获取
@@ -200,7 +220,6 @@ document.ready(function () {
 
 
 
-
     // 保存按钮事件监听
     saveBtn.addEventListener("click", function (e) {
         // 获取信息
@@ -223,16 +242,15 @@ document.ready(function () {
         console.log(editInfo.birthday);
         // ajax请求
         editUserInfo(editInfo);
-        console.log(JSON.stringify(editInfo));
 
-        // 将后台的数据获取渲染到页面
     })
-
     // 封装修改信息ajax数据请求
     function editUserInfo(data) {
         // ajax数据请求
         $http.post('http://139.9.177.51:8099/users/userEdit', data, function (result) {
-            console.log(result);
+            if (status == 0) {
+                utils.tatol(0, '保存成功');
+            }
         })
     }
 

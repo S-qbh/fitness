@@ -79,7 +79,11 @@ utils.addFooter = function (page) {
 
 
 
-
+/**
+ * @strToObj 将网址中的字符串转换为数组
+ * @str String   ?name="zhangsan"&age=18
+ * @returns Object {"name":"zhangsan","age":18}
+ */
 
 
 
