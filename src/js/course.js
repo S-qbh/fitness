@@ -5,6 +5,8 @@ require('../css/course.less');
 document.ready(function () {
     // 服务器地址
     let baseUrl = 'http://139.9.177.51:8099';
+    // 返回上一页按钮
+    let goBackBtn = document.querySelector('.goback');
     // 获取开始按钮
     let startBtn = document.querySelector(".start-btn");
     // 获取卡
@@ -74,6 +76,10 @@ document.ready(function () {
         // 将课程视频列表存储到本地存储
         localStorage.setItem('videoList', JSON.stringify(data.fragments));
         location.href = './details.html';
+    })
+    // 返回上一页按钮点击事件监听
+    goBackBtn.addEventListener('click', function (e) {
+        location.href = './sports.html';
     })
 
 })

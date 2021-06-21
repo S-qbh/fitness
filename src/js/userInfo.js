@@ -33,7 +33,7 @@ document.ready(function () {
     // 通过userId获取用户信息进行渲染
     function getUserInfo() {
         $http.get('http://139.9.177.51:8099/users/accountinfo', { userId: userId }, function (result) {
-            console.log(result);
+            // console.log(result);
             let arr = result.data.address.split(',');
 
             // 格林威治时间转常用事件
@@ -46,7 +46,7 @@ document.ready(function () {
                 let m = parseInt(date.getMonth()) + 1;
                 m = m < 10 ? '0' + m : m;
                 // 获取天
-                let d = date.getDate() + 1;
+                let d = date.getDate();
                 d = d < 10 ? '0' + d : d;
 
                 let timeStr = `${y}-${m}-${d}`;
@@ -89,7 +89,7 @@ document.ready(function () {
 
         })
     }
-    getUserInfo();
+
 
     // 定义全局对象存放选择的值，最后作为参数进行数据保存
     // 每次选择 进行信息修改
@@ -102,6 +102,7 @@ document.ready(function () {
         sign: ''//简介
     }
 
+    getUserInfo();
 
     // 返回点击事件监听
     backBtn.addEventListener('click', function (e) {
@@ -137,13 +138,19 @@ document.ready(function () {
             end: new Date().getFullYear(),
             onConfirm: function (result) {
                 // 拼接渲染到页面
-                birthdayTextDom.textContent = `${result[0].value}-${result[1].value}-${result[2].value}`;
+                birthdayTextDom.textContent = `${result[0].value}-${addZero(result[1].value)}-${addZero(result[2].value)}`;
                 // 将生日信息存放到全局对象data中
                 data.birthday = birthdayTextDom.textContent;
             },
             title: '请选择生日'
         });
     })
+    // 时间补0
+    function addZero(num) {
+        let str = num;
+        str = str < 10 ? '0' + str : str;
+        return str;
+    }
 
     // 点击省份从后台获取数据
     provinceBoxDom.addEventListener('click', function (e) {
@@ -226,9 +233,17 @@ document.ready(function () {
         // 将昵称和个人简介传入到data中
         data.nicName = userNameTextDom.value;//昵称
         data.sign = personTextDom.value;//描述
+
+        let addressArr = [];
         // 将省市信息构造为数据
-        let addressArr = [data.pro.label, data.city.label];
-        console.log(addressArr);
+        if (data.pro.label && data.city.label) {
+            addressArr = [data.pro.label, data.city.label];
+            // console.log(addressArr);
+        } else {
+            addressArr = [data.pro.label, data.city.label];
+
+        }
+
 
         // 构造要传递的数据格式
         let editInfo = {
@@ -250,6 +265,8 @@ document.ready(function () {
         $http.post('http://139.9.177.51:8099/users/userEdit', data, function (result) {
             if (status == 0) {
                 utils.tatol(0, '保存成功');
+            } else {
+                utils.tatol(1, '操作失败');
             }
         })
     }

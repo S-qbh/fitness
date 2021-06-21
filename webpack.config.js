@@ -198,7 +198,7 @@ module.exports = {
         new CleanWebpackPlugin()
     ],
     // 环境
-    mode: 'development',
+    mode: process.env.NODE_ENV,
 
 
 

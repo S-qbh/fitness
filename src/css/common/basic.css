@@ -62,7 +62,8 @@ body {
 .footer div {
     text-align: center;
     font-size: 14px;
-    color: #8a8a8a;
+    /* color: #8a8a8a; */
+    color: #333;
 }
 
 .footer i {

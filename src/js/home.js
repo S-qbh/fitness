@@ -18,7 +18,7 @@ document.ready(function () {
 
     // 从utils.js中引入底部组件
     utils.addFooter('home');
-
+    // 首页轮播图
     var mySwiper = new Swiper('.swiper-container', {
         // direction: 'vertical', //垂直切换选项 横向horizontal(默认)
         loop: true, // 循环模式选项

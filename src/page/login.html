@@ -22,10 +22,10 @@
         <!-- 表单块 -->
         <div class="formBox">
             <p class="user_name">
-                <input type="text" placeholder="请输入账号/电话" value="18881035295" id="tel">
+                <input type="text" placeholder="请输入账号/电话" id="tel">
             </p>
             <p class="user_pwd">
-                <input type="text" placeholder="请输入密码" value="a123456" id="pwd">
+                <input type="text" placeholder="请输入密码" id="pwd">
             </p>
             <p class="user_load">
                 <input type="button" value="登录" id="button">
@@ -46,6 +46,18 @@
         <!-- hold -->
         <div class="hold">
             <span>-HOLD ON-</span>
+        </div>
+
+        <!-- 提示蒙层 -->
+        <div class="info-box">
+            <h3>检测到已有账号请选择操作!</h3>
+            <h6>(<span class="time-box">5</span>s)后跳转</h6>
+            <p>!</p>
+            <!-- 按钮 -->
+            <div class="btn-box dpflex">
+                <div class="yes-btn">直接登录</div>
+                <div class="no-btn">切换账号</div>
+            </div>
         </div>
     </main>
 </body>

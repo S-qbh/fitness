@@ -145,8 +145,8 @@ document.ready(function () {
         // }
         // post请求
         $http.post("http://139.9.177.51:8099/users/login", data, function (result) {
-            console.log(result);
-            console.log(result.status);
+            // console.log(result);
+            // console.log(result.status);
             // 判断状态
             if (result.status == 0) {
                 // 登录成功
