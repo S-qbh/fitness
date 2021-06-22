@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>地点关键字 + 骑行路线规划</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=5b455c92c0621dc3f6a4f85e204195d8&plugin=AMap.Riding"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header></header>
+    <!-- 主体 -->
+    <main>
+        <div id="container"></div>
+        <div id="panel"></div>
+        <!-- 输入框 -->
+        <div class="inputBox">
+            <input type="text" id="begin-inp" placeholder="请输入起点">
+            <input type="text" id="end-inp" placeholder="请输入终点">
+            <div id="confirmBtn">确定</div>
+        </div>
+    </main>
+
+</body>
+
+</html>

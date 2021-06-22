@@ -13,13 +13,25 @@ document.ready(function () {
 
     // 调用底部公共组件
     utils.addFooter('sports');
-
-
-
+    // 调用头部公共组件
+    utils.addHeader('sports');
     // 获取用户id  
     let user = JSON.parse(localStorage.getItem('user'));
     // 获取用户userid
     let userId = user.userId;
+    // 获取userId进行课程绑定
+    let addData = {
+        userId: userId,
+        courseIds: [3, 4, 5, 6, 7]
+    }
+    function getAddCourse() {
+        // ajax请求添加数据
+        $http.post('http://139.9.177.51:8099/sports/saveCourse', addData, function (res) {
+            console.log(res);
+        })
+    }
+    getAddCourse();
+
     // ajax数据请求
     function getSportsData() {
         // 数据请求

@@ -76,7 +76,34 @@ utils.addFooter = function (page) {
     // 将footer添加到body最后
     document.querySelector('body').appendChild(footer);
 }
+// 添加运动页顶部
 
+
+utils.addHeader = function (pages) {
+    // 创建nav标签
+    let nav = document.createElement('nav');
+    // 添加类名
+    nav.className = 'dpflex';
+    // 封装值
+    let htmlText = `
+        <nav class="dpflex">
+            <a href="./run.html">
+                <div class="${pages == 'run' ? 'active' : ''}">跑步</div>
+            </a>
+            <a href="./cycling.html">
+                <div class="${pages == 'cycling' ? 'active' : ''}">骑行</div>
+            </a>
+            <a href="./sports.html">
+                <div class="${pages == 'sports' ? 'active' : ''}">课程训练</div>
+            </a>
+        </nav>
+    `
+    // 将值赋值到nav中
+    nav.innerHTML = htmlText;
+    // 将值追加到header中
+    document.querySelector('header').appendChild(nav);
+
+}
 
 // 挂载
 window.utils = utils;

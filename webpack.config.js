@@ -57,7 +57,11 @@ module.exports = {
         // 课程介绍页
         course: './src/js/course.js',
         // 课程详情页
-        details: './src/js/details.js'
+        details: './src/js/details.js',
+        // 跑步页面
+        run: './src/js/run.js',
+        // 骑行页面
+        cycling: './src/js/cycling.js'
 
     },
 
@@ -187,6 +191,18 @@ module.exports = {
             template: './src/page/details.html',
             filename: 'details.html',
             chunks: ['details', 'commonCSS', 'dom', 'http', 'utils']
+        }),
+        // 跑步页
+        new HtmlWebpackPlugin({
+            template: './src/page/run.html',
+            filename: 'run.html',
+            chunks: ['run', 'commonCSS', 'dom', 'utils']
+        }),
+        // 骑行页
+        new HtmlWebpackPlugin({
+            template: './src/page/cycling.html',
+            filename: 'cycling.html',
+            chunks: ['cycling', 'commonCSS', 'dom', 'utils']
         }),
 
         new MiniCssExtractPlugin({
